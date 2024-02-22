@@ -1,14 +1,14 @@
 import React from 'react'
 
-function createCard(props) {
+function CreateCard(props) {
     const crops = props.crops
-    
+
   return (
     <div>
         {crops.map((crop) => (
-            <div className='Card'>
-                <header className='CropHeader' key={crop.id}>
-                    <a href={crop.imgUrl}></a>
+            <div className='Card' key={crop.id}>
+                <header className='CropHeader'>
+                    <img href={crop.imgUrl}></img>
                     <h3>{crop.name}</h3>
                     <button>+List</button>
                 </header>
@@ -29,4 +29,4 @@ function createCard(props) {
   )
 }
 
-export default createCard
+export default CreateCard

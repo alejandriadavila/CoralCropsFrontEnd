@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { seasonalCrops } from '../services/cropsApi'
 import { addToDo } from '../services/cropsApi'
-import createCard from './createCard'
+import CreateCard from './createCard'
 
 export default function Fall() {
     const crops = seasonalCrops("summer")
@@ -10,7 +10,7 @@ export default function Fall() {
 
     return(
             <div>
-                <createCard crops={crops}/>
+                <CreateCard crops={crops}/>
             </div>
     )
 }

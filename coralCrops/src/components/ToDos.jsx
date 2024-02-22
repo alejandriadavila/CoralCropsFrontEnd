@@ -4,17 +4,17 @@ import { editToDo } from '../services/cropsApi'
 import { Link } from 'react-router-dom'
 
 export default function ToDos() {
-    const [toDoList, setToDos] = useState(null)
+    const [toDoList, setToDos] = useState([])
 
     useEffect(() => {
         getTodos()
         .then(response => {
             setToDos(response)
         })
-    })
+    }, [])
 
     console.log(toDoList)
-
+    
   return (
     <div className='Card'>
         Daily To Do
