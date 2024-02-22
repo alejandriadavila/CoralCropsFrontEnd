@@ -13,6 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.navbar {
+  align-items: center;
+}
+.navbar .links {
+  margin-left: auto;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
