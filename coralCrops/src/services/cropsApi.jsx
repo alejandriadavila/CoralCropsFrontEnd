@@ -5,6 +5,7 @@ const baseURL = 'https://localhost:5050'
 // Get all crops for a given season
 export const seasonalCrops = (season) => {
     const URL = `${baseURL}/${season}`
+    axios.get(URL)
     const response = axios.get(URL)
     return response
 }

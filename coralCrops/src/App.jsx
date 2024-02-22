@@ -9,7 +9,7 @@ import Spring from './components/Spring'
 import Summer from './components/Summer'
 import Winter from './components/Winter'
 
-function App() {
+export default function App() {
 
   return (
     <>
@@ -17,21 +17,12 @@ function App() {
         <Navbar></Navbar>
         <Routes>
           <Route path='/' element={<ToDos/>}/>
-          <Route path='/fall' element={Fall}/>
-          <Route path='/spring' element={Spring}/>
-          <Route path='/summer' element={Summer}/>
-          <Route path='/winter'element={Winter}/>
+          <Route path='/fall' element={<Fall/>}/>
+          <Route path='/spring' element={<Spring/>}/>
+          <Route path='/summer' element={<Summer/>}/>
+          <Route path='/winter'element={<Winter/>}/>
         </Routes>
-        {/* <ToDos></ToDos> */}
-        <div className="Card">
-          <h3>Crop To-Do List</h3>
-          <section className='ToDoContainer'>
-            <li> List items </li>
-          </section>
-        </div>
       </div>
     </>
   )
 }
-
-export default App

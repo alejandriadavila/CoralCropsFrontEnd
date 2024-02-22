@@ -1,10 +1,18 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getTodos } from '../services/cropsApi'
 import { editToDo } from '../services/cropsApi'
+import { Link } from 'react-router-dom'
 
-export default function ToDos(props) {
-    const toDoList = getTodos()
+export default function ToDos() {
+    const [toDoList, setToDos] = useState(null)
+
+    useEffect(() => {
+        getTodos()
+        .then(response => {
+            setToDos(response)
+        })
+    })
+
     console.log(toDoList)
 
   return (
@@ -12,14 +20,12 @@ export default function ToDos(props) {
         Daily To Do
         <button className='EditButton'></button>
         {toDoList.map((crop) => (
-            <li className='ListItem' key={crop.id}><a href={crop.imgUrl}></a>{crop.name}</li>
+            <li className='ListItem' key={crop.id}>
+                <a href={crop.imgUrl}></a>
+                {crop.name}
+                <input type="radio" />
+                </li>
         ))}
-        <ul>
-            <li><a href=""></a> Radishes <input type="radio" /></li>
-            <li><a href=""></a> Radishes <input type="radio" /></li>
-            <li><a href=""></a> Radishes <input type="radio" /></li>
-            <li><a href=""></a> Radishes <input type="radio" /></li>
-        </ul>
     </div>
   )
 }
