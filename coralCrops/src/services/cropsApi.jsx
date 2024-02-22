@@ -24,12 +24,13 @@ export const getTodos = async() => {
     }catch(err){
         console.log(err)
     }
-    }
+}
 
 
 // Add a crop to the toDo list
 export const addToDo = async(toDo) => {
     const URL = `${baseURL}/toDo`
+    console.log(toDo)
     try {
         const response = await axios.post(URL, toDo)
         const {data} = response.data

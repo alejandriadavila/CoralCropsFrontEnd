@@ -4,8 +4,14 @@ import { seasonalCrops } from '../services/cropsApi'
 import { addToDo } from '../services/cropsApi'
 import CreateCard from './createCard'
 
-export default function Fall() {
-    const crops = seasonalCrops("winter")
+export default function Winter() {
+    const [crops, setCrops] = useState([])
+
+    useEffect(() => {
+        seasonalCrops("winter")
+        .then(response => setCrops(response))
+    }, [])
+
     console.log(crops)
 
     return(

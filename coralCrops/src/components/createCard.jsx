@@ -1,7 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { addToDo } from '../services/cropsApi'
 
 function CreateCard(props) {
     const crops = props.crops
+
+    // Was meant to add the selected grop to the list on your Home page, but the post request isn't working
+    // const handleClick = (crop, e) => {
+    //     console.log(crop)
+    //     addToDo(crop)
+    // }
 
   return (
     <div>
@@ -10,18 +17,14 @@ function CreateCard(props) {
                 <header className='CropHeader'>
                     <img href={crop.imgUrl}></img>
                     <h3>{crop.name}</h3>
-                    <button>+List</button>
+                    <button>Add to List</button>
                 </header>
                 <div className='Cost'>
                     <a href=""></a>
                     {crop.seedCost}
                 </div>
                 <div className='Properties'>
-                    Type: {crop.type}
-                    Does it regrow?
-                    {/* {if(crop.regrowBoolean == "true"){
-                        {crop.regrowTime}
-                    }} */}
+                    <p>Type: {crop.type}</p>
                 </div>
             </div>
         ))}

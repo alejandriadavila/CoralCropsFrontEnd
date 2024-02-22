@@ -18,7 +18,7 @@ export default function ToDos() {
   return (
     <div className='Card'>
         Daily To Do
-        <button className='EditButton'></button>
+        <button className='EditButton'>Edit</button>
         {toDoList.map((crop) => (
             <li className='ListItem' key={crop.id}>
                 <a href={crop.imgUrl}></a>
